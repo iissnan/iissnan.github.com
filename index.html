@@ -2,20 +2,58 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>Vincent Choi</title>
+        <title>Homepage of Vincent Choi</title>
+        <style type="text/css">
+            *{ margin: 0; padding: 0; }
+            a{ color: #06c; }
+            a img{ border: 0; }
+            li{ list-style: none; }
+            h1{ font-size: 18px; }
+            h2{ font-size: 16px; }
+            h3{ font-size: 14px; }
+            h4{ font-size: 13px; }
+
+            body{ font: 13px/1.5 "Hiragino Sans GB", Heveltica, Arial, sans-serif; }
+            .wrap{ margin: 10px 30px; }
+                .logo { position: absolute; left: 18px; top: 18px; width: 64px; }
+                    .logo img{ padding: 3px; width:64px; height: 64px; border: 1px solid #eee; }
+                .info { margin-left: 80px; }
+                    .info ul{
+                        margin: 10px 15px;
+                    }
+                    h2{ margin: 15px 0; padding-bottom: 5px; border-bottom: 1px dotted #eee; }
+        </style>
     </head>
 
     <body>
-        <h1>About Vincent Choi</h1>
-        <p>
-            A web-frontend engineer, living in Amoy of China.
-        </p>
+        <div class="wrap">
+            <div class="logo">
+                <h1>
+                    <img src="http://www.gravatar.com/avatar/6e28d9545d0e175891e0925092055638.png" alt="Homepage of Vincent Choi" />
+                </h1>
+            </div>
 
-        <ul>
-            <li><a href="http://github.com/iissnan">Github</a></li>
-            <li><a href="http://code.iissnan.com/">Notes of coding</a></li>
-            <li><a href="http://weibo.com/iissnan">Sina Weibo</a></li>
-        </ul>
+            <div class="info">
+                <h2>About Vincent Choi</h2>
+                <p>
+                    A web-frontend engineer, living in Amoy of China.
+                </p>
+                <ul>
+                    <li><a target="_blank" href="http://github.com/iissnan">Github</a></li>
+                    <li><a target="_blank" href="http://code.iissnan.com/">Notes of coding</a></li>
+                    <li><a target="_blank" href="http://weibo.com/iissnan">Sina Weibo</a></li>
+                </ul>
+
+                <h2>Lab</h2>
+                <ul>
+                    <li>
+                        <a target="_blank" href="http://iissnan.com/underscore/docs/underscore.html">
+                            Underscore.js 源代码 中文译注版
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </body>
 </html>
 
