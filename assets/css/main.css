@@ -1,0 +1,74 @@
+*{ margin: 0; padding: 0; }
+a{
+    color: #06c;
+    text-decoration: none;
+    padding: 3px 0;
+    border-bottom: 1px solid #06c;
+}
+a:hover{
+    color: #fff;
+    background: #06c;
+}
+img, fieldset{
+    border: 0;
+}
+ul, ol{
+    list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: Georgia, sans-serif;
+}
+h1{ font-size: 20px; }
+h2{ font-size: 18px; }
+h3{ font-size: 16px; }
+h4{ font-size: 14px; }
+
+.section{
+    float: left;
+    margin-right: 10px;
+    width: 400px;
+}
+.aside{
+    font-size: 11px;
+    color: #ccc;
+    font-style: italic;
+    font-weight: normal;
+}
+
+body{
+    font: 13px/1.62 "Hiragino Sans GB", Heveltica, Arial, sans-serif;
+}
+li{ margin: 5px 0;}
+.wrap{ margin: 10px 30px; }
+    .logo {
+        position: absolute;
+        left: 18px;
+        top: 18px;
+        width: 140px;
+        text-align: center;
+    }
+        .logo img{
+            padding: 3px;
+            width: 120px;
+            height: 120px;
+            border: 1px solid #eee;
+        }
+        .who-am-i{
+            font-size: 14px;
+            text-align: center;
+            font-family: Georgia, sans-serif;
+        }
+        .logo .quote{ color: #999; }
+    .info { margin-left: 150px; }
+    .list{
+        margin: 10px 30px;
+    }
+    .list li{
+        list-style-type: square;
+    }
+    h2{
+        margin: 10px 0;
+        padding-bottom: 2px;
+        border-bottom: 1px dotted #eee;
+    }
