@@ -1,6 +1,6 @@
 var douban = {};
 
-douban.api = "http://api.douban.com/people/iissnan/collection?alt=xd&callback=douban.show&cat=book&status=reading&max-results=8";
+douban.api = "http://api.douban.com/people/iissnan/collection?alt=xd&callback=douban.show&cat=book&status=reading&max-results=10";
 
 douban.show = function (response){
     var doubanList = document.getElementById("douban-list");
