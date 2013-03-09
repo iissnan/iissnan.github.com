@@ -10,7 +10,7 @@ douban.show = function (response){
         if (typeof response.entry !== "undefined") {
             for (var i = 0; i < response.entry.length; i ++) {
                 entry = response.entry[i]["db:subject"];
-                items = items + '<li><a href="' + entry["link"]["@href"] + '">' +
+                items = items + '<li><a target="_blank" href="' + entry["link"][1]["@href"] + '">' +
                     entry.title["$t"] +
                     '</a></li>';
             }
@@ -27,3 +27,4 @@ window.onload = function () {
     script.src = douban.api;
     document.body.appendChild(script);
 };
+
