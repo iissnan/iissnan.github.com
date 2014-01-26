@@ -24,7 +24,27 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="container" ng-view></div>
+    <div class="menu" ng-controller="MenuController">
+        <ul>
+            <li class="menu-profile">
+                <a href="/" ng-click="go('profile', $event)">Profile</a>
+            </li>
+            <li class="menu-social">
+                <a href="social" ng-click="go('social', $event)">Social</a></li>
+            <li class="menu-lab">
+                <a href="lab" ng-click="go('lab', $event)">Lab</a>
+            </li>
+            <li class="menu-reading">
+                <a href="reading" ng-click="go('reading', $event)">Reading</a>
+            </li>
+            <li class="menu-equip">
+                <a href="equip" ng-click="go('equip', $event)">Equipment</a>
+            </li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="container" ng-view></div>
+    </div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
