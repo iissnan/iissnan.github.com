@@ -1,6 +1,6 @@
 (function () {
     require.config({
-        baseUrl: "",
+        baseUrl: "../",
         paths: {
             "jquery": "bower_components/jquery/jquery",
             "angular": "bower_components/angular/angular",
@@ -69,7 +69,7 @@
                     })
                     .when("/reading", {
                         controller: "ReadingController", 
-                        templateUrl: "/views/reading.html"
+                        templateUrl: "/views/read.html"
                     })
                     .when("/equip", {
                         controller: "EquipController", 
@@ -80,7 +80,11 @@
                     });
 
                 $locationProvider.hashPrefix("!");
+            })
+            .run(function () {
+                $(".loading").hide();
             });
+            ;
 
         // Bootstrap the application.
         $(document).ready(function () {

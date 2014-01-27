@@ -23,27 +23,25 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <!-- Add your site or application content here -->
+    <!--MENU-->
     <div class="menu" ng-controller="MenuController">
         <ul>
-            <li class="menu-profile">
-                <a href="/" ng-click="go('profile', $event)">Profile</a>
-            </li>
-            <li class="menu-social">
-                <a href="social" ng-click="go('social', $event)">Social</a></li>
-            <li class="menu-lab">
-                <a href="lab" ng-click="go('lab', $event)">Lab</a>
-            </li>
-            <li class="menu-reading">
-                <a href="reading" ng-click="go('reading', $event)">Reading</a>
-            </li>
-            <li class="menu-equip">
-                <a href="equip" ng-click="go('equip', $event)">Equipment</a>
+            <li ng-repeat="item in items" class="menu-item menu-item-{{item.name}}">
+            <a ng-href="{{item.path}}" ng-click="go(item.path, $event)">
+                    {{item.name}}
+                </a>
             </li>
         </ul>
     </div>
+
+    <!--CONTENT-->
     <div class="content">
         <div class="container" ng-view></div>
+    </div>
+
+    <!--LOADING-->
+    <div class="loading">
+        <img src="/images/loading.gif" alt="loading..." />
     </div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
