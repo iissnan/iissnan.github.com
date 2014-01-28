@@ -12,6 +12,7 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/ionicons/css/ionicons.css">
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css({.tmp,app}) styles/main.css -->
@@ -24,11 +25,16 @@
     <![endif]-->
 
     <!--MENU-->
-    <div class="menu" ng-controller="MenuController">
-        <ul>
-            <li ng-repeat="item in items" class="menu-item menu-item-{{item.name}}">
-            <a ng-href="{{item.path}}" ng-click="go(item.path, $event)">
-                    {{item.name}}
+    <div class="sidebar">
+        <div class="avatar">
+            <img src="/images/yeoman.png" alt="avatar" />
+        </div>
+        <ul class="menu" ng-controller="MenuController">
+            <li ng-repeat="item in items"
+                class="menu-item menu-item-{{item.name}}" ng-class="{active: $first}">
+                <a ng-href="{{item.path}}" ng-click="go(item.path, $event)">
+                    <i class="icon ion-{{item.icon}}"></i>
+                    <span class="menu-item-text">{{item.name}}</span>
                 </a>
             </li>
         </ul>

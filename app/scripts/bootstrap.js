@@ -67,7 +67,7 @@
                         controller: "LabController", 
                         templateUrl: "/views/lab.html"
                     })
-                    .when("/reading", {
+                    .when("/read", {
                         controller: "ReadingController", 
                         templateUrl: "/views/read.html"
                     })
