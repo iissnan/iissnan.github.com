@@ -31,7 +31,7 @@
         </div>
         <ul class="menu" ng-controller="MenuController">
             <li ng-repeat="item in items"
-                class="menu-item menu-item-{{item.name}}" ng-class="{active: $first}">
+                class="menu-item menu-item-{{item.name}}" ng-class="{active: item.name === activeItem.name}">
                 <a ng-href="{{item.path}}" ng-click="go(item.path, $event)">
                     <i class="icon ion-{{item.icon}}"></i>
                     <span class="menu-item-text">{{item.name}}</span>

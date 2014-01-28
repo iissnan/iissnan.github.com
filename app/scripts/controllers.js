@@ -12,12 +12,22 @@ angular.module("vi.controllers")
         var routes = $route.routes;
 
         $scope.items = menuItems;
+        $scope.activeItem = getActiveItem();
+
         $scope.go = function (path, event) {
             $location.path(routes[path] ? path : "/404");
-            $(".menu-item").removeClass("active");
-            $(event.target).parent().addClass("active");
+            $scope.activeItem = getActiveItem();
             event.preventDefault();
         };
+
+        function getActiveItem() {
+            for (var i = 0; i < menuItems.length; i++) {
+                if ($location.path() === menuItems[i].path) {
+                    return menuItems[i];
+                }
+            }
+            return {name: ""};
+        }
     })
 
     .controller("ProfileController", function ($scope) {
