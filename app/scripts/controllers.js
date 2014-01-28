@@ -35,6 +35,8 @@ angular.module("vi.controllers")
     })
     .controller("SocialController", function () {})
     .controller("LabController", function () {})
-    .controller("ReadController", function () {})
+    .controller("ReadController", function ($scope, douban$) {
+        $scope.readingBooks = douban$.get();
+    })
     .controller("EquipController", function () {})
     ;
