@@ -2,7 +2,7 @@
 
 
 angular.module("vi.services")
-    .factory("douban$", function ($http) {
+    .factory("douban$", function ($q, $http) {
         var doubanApi = "http://api.douban.com/people/iissnan/collection";
         var params = {
             callback: "JSON_CALLBACK", // REQUIRED for AngularJS JSONP call
@@ -14,6 +14,8 @@ angular.module("vi.services")
         };
 
         function get() {
+            var deferred = $q.defer();
+
             $http({method: "jsonp", url: doubanApi, params: params})
                 .success(function (response, status) {
                     var data = [];
@@ -27,18 +29,14 @@ angular.module("vi.services")
                         }
                     }
 
-                    return {
-                        status: 0,
-                        data: data
-                    };
+                    deferred.resolve({ status: 0, data: data});
                 })
 
                 .error(function (data, status) {
-                    return {
-                        status: 1,
-                        data: data
-                    };
+                    deferred.reject({ status: 1, data: data });
                 });
+
+           return deferred.promise;
         }
         
         return {

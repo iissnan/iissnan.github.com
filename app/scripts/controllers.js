@@ -36,7 +36,11 @@ angular.module("vi.controllers")
     .controller("SocialController", function () {})
     .controller("LabController", function () {})
     .controller("ReadController", function ($scope, douban$) {
-        $scope.readingBooks = douban$.get();
+        douban$.get().then(function (response){
+            $scope.readingBooks = response.data;
+        }, function (response) {
+            $scope.readingBooks = [];
+        });
     })
     .controller("EquipController", function () {})
     ;
