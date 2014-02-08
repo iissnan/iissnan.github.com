@@ -1,7 +1,10 @@
-<h2>Read</h2>
+<h2>Reading</h2>
 
-<ul>
-    <li ng-repeat="item in readingBooks">
-        <a ng-href="item.href">{{item.title}}</a>
+<ul class="reading-list">
+    <li ng-repeat="item in readingBooks" ng-class="{first: $index % 5 === 0}">
+        <a ng-href="{{item.href}}">
+            <img ng-src="{{item.image}}" alt="{{item.title}}" />
+            {{item.title}}
+        </a>
     </li>
 </ul>

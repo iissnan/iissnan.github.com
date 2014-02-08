@@ -23,8 +23,9 @@ angular.module("vi.services")
                         for (var i = 0; i < response.entry.length; i ++) {
                             var entry = response.entry[i]["db:subject"];
                             data.push({
+                                title: entry.title["$t"],
                                 href: entry["link"][1]["@href"],
-                                title: entry.title["$t"]
+                                image: entry["link"][2]["@href"].replace(/spic/, "lpic")
                             });
                         }
                     }

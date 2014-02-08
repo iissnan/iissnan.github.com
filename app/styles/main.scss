@@ -1,7 +1,7 @@
 @import "compass/reset";
 
 body{
-    font: 13px/1.6 Verdana, Arial, "sans-serif";
+    font: 14px/1.6 Verdana, Arial, "sans-serif";
 }
 
 .loading {
@@ -77,4 +77,58 @@ body{
 
 .content{
     margin-left: 150px;
+    padding: 40px 30px;
+}
+
+h2 {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 10px 0 20px;
+    text-transform: capitalize;
+}
+
+p{
+    margin: 5px 0 5px;
+
+    ::first-line {
+        margin-left: 10px;
+    }
+}
+
+
+// PAGE: Read
+.reading-list{
+    width: 660px;
+
+    li{
+        float: left;
+        width: 150px;
+        margin-left: 20px;
+
+        &.first{
+            margin: 0;
+        }
+
+        img, a{
+            display: block;
+            font-size: 12px;
+        }
+        img{
+            margin:0 0 5px;
+            width: 106px;
+            height: 158px;
+        }
+        a{
+            width: 150px;
+            white-space: no-wrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            text-decoration: none;
+            color: #06c;
+
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
 }
