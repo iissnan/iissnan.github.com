@@ -4,7 +4,6 @@ angular.module("vi.controllers")
     .controller("MenuController", function ($scope, $location, $route) {
         var menuItems = [
             {name: "profile", path: "/",       icon: "person"},
-            {name: "social",  path: "/social", icon: "earth"},
             {name: "lab",     path: "/lab",    icon: "beaker"},
             {name: "read",    path: "/read",   icon: "bookmark"},
             {name: "equip",   path: "/equip",  icon: "monitor"}
@@ -33,7 +32,6 @@ angular.module("vi.controllers")
     .controller("ProfileController", function ($scope) {
         return function () {};
     })
-    .controller("SocialController", function () {})
     .controller("LabController", function () {})
     .controller("ReadController", function ($scope, douban$) {
         douban$.get().then(function (response){

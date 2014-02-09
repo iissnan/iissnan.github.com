@@ -9,7 +9,7 @@
             "controllers": "scripts/controllers",
             "directives": "scripts/directives",
             "services": "scripts/services",
-            "filters": "scripts/filters",
+            "filters": "scripts/filters"
         },
         shim: {
             "angular": {
@@ -30,7 +30,7 @@
             },
             "filters": {
                 deps: ["modules"]
-            },
+            }
         }
     });
 
@@ -59,10 +59,6 @@
                         controller: "ProfileController", 
                         templateUrl: "/views/profile.html"
                     })
-                    .when("/social", {
-                        controller: "SocialController", 
-                        templateUrl: "/views/social.html"
-                    })
                     .when("/lab", {
                         controller: "LabController", 
                         templateUrl: "/views/lab.html"
@@ -84,7 +80,6 @@
             .run(function () {
                 $(".loading").hide();
             });
-            ;
 
         // Bootstrap the application.
         $(document).ready(function () {
