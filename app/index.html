@@ -67,8 +67,24 @@
     <script src="bower_components/json3/lib/json3.min.js"></script>
     <![endif]-->
 
-    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <!-- endbower -->
     <!-- endbuild -->
-    <script src="bower_components/requirejs/require.js" data-main="scripts/bootstrap"></script>
+
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script>var APP_NAME = 'iissnan';</script>
+    <script src="scripts/modules.js"></script>
+    <script src="scripts/controllers.js"></script>
+    <script src="scripts/directives.js"></script>
+    <script src="scripts/filters.js"></script>
+    <script src="scripts/services.js"></script>
+    <script src="scripts/bootstrap.js"></script>
+    <!-- endbuild -->
 </body>
 </html>
