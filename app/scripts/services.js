@@ -1,7 +1,7 @@
 "use strict";
 
 
-angular.module("vi.services")
+angular.module("services")
     .factory("douban$", function ($q, $http) {
         var doubanApi = "http://api.douban.com/people/iissnan/collection";
         var params = {

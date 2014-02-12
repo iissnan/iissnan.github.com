@@ -1,3 +1,3 @@
 "user strict";
 
-angular.module("vi.directives");
+angular.module("directives");

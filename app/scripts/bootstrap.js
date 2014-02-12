@@ -1,21 +1,19 @@
-
-
 mainModule.config(function ($routeProvider, $locationProvider) {
         $routeProvider
             .when("/", {
-                controller: "ProfileController",
+                controller: "ProfileCtrl",
                 templateUrl: "/views/profile.html"
             })
             .when("/lab", {
-                controller: "LabController",
+                controller: "LabCtrl",
                 templateUrl: "/views/lab.html"
             })
             .when("/read", {
-                controller: "ReadController",
+                controller: "ReadCtrl",
                 templateUrl: "/views/read.html"
             })
             .when("/equip", {
-                controller: "EquipController",
+                controller: "EquipCtrl",
                 templateUrl: "/views/equip.html"
             })
             .otherwise({
