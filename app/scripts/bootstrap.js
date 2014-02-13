@@ -12,9 +12,9 @@ mainModule.config(function ($routeProvider, $locationProvider) {
                 controller: "ReadCtrl",
                 templateUrl: "/views/read.html"
             })
-            .when("/equip", {
-                controller: "EquipCtrl",
-                templateUrl: "/views/equip.html"
+            .when("/device", {
+                controller: "DeviceCtrl",
+                templateUrl: "/views/device.html"
             })
             .otherwise({
                 redirectTo: "/"

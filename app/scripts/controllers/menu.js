@@ -13,7 +13,7 @@ angular.module("controllers")
             {name: "profile", path: "/",       icon: "person"},
             {name: "lab",     path: "/lab",    icon: "beaker"},
             {name: "read",    path: "/read",   icon: "bookmark"},
-            {name: "equip",   path: "/equip",  icon: "monitor"}
+            {name: "device",  path: "/device", icon: "monitor"}
         ];
         var routes = $route.routes;
 
