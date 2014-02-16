@@ -3,7 +3,7 @@
 <p>Books I am reading:</p>
 
 <ul class="reading-list">
-    <li ng-repeat="item in readingBooks" ng-class="{first: $index % 5 === 0}">
+    <li ng-repeat="item in readingBooks" ng-class="{first: $index % 4 === 0}">
         <a ng-href="{{item.href}}">
             <img ng-src="{{item.image}}" alt="{{item.title}}" />
             {{item.title}}
