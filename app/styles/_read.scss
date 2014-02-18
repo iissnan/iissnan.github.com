@@ -1,6 +1,5 @@
 // PAGE: Read
 .content .reading-list {
-  width: 660px;
   margin: 0;
   list-style: none;
 
@@ -9,10 +8,6 @@
     width: 150px;
     margin-top: 15px;
     margin-left: 20px;
-
-    &.first {
-      margin-left: 0;
-    }
 
     img, a {
       display: block;

@@ -1,3 +1,39 @@
-body{
-  font: 14px/1.6 Verdana, Arial, "sans-serif";
+body {
+  font: 16px/1.6 $baseFontFamily;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 28px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  font-size: 12px;
+}
+
+p {
+  margin: 5px 0 5px;
+
+  ::first-line {
+    margin-left: 10px;
+  }
 }
