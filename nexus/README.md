@@ -1,10 +1,10 @@
 # File list #
 
-## phantomjs-1.9.6-windows.zip ##
+## phantomjs-1.9.7-windows.zip ##
 
 This file is used when using yeoman to generate AngularJS Applications.
     
-The original file is hosted at [http://cdn.bitbucket.org/ariya/phantomjs/downloads/phantomjs-1.9.6-windows.zip](http://cdn.bitbucket.org/ariya/phantomjs/downloads/phantomjs-1.9.6-windows.zip)
+The original file is hosted at [http://cdn.bitbucket.org/ariya/phantomjs/downloads/phantomjs-1.9.7-windows.zip](http://cdn.bitbucket.org/ariya/phantomjs/downloads/phantomjs-1.9.7-windows.zip)
 
 For some reason(GF*), this link is unable to be connected.
 
