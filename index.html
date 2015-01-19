@@ -1,15 +1,71 @@
-<!doctype html><!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]--><!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]--><!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]--><!--[if gt IE 8]><!--><html class="no-js"><!--<![endif]--><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Home Page - iissnan</title><meta name="description" content="Home page of iissnan."><meta name="viewport" content="width=device-width, initial-scale=1.0, max-scale=1.0"><!-- Place favicon.ico and apple-touch-icon.png in the root directory --><link rel="stylesheet" href="styles/83d1f201.vendor.css"><link rel="stylesheet" href="styles/579e696b.main.css"><body><!--[if lt IE 7]>
-      <p class="browsehappy">
-          You are using an <strong>outdated</strong> browser.
-          Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
-      </p>
-    <![endif]--><div class="avatar"><a href="/"><img src="images/5fede418.avatar.jpeg" alt="avatar"></a></div><!--MENU--><div class="sidebar"><ul class="menu" ng-controller="MenuCtrl"><li ng-repeat="item in items" class="menu-item menu-item-{{item.name}}" ng-class="{active: item.name === activeItem.name}"><a ng-href="{{item.path}}" ng-click="go(item.path, $event)"><i class="icon ion-{{item.icon}}"></i> <span class="menu-item-text">{{item.name}}</span></a></li></ul></div><!--CONTENT--><div class="content"><div class="container" ng-view=""></div></div><!--LOADING--><div class="loading"><img src="/images/bfaf29b6.loading.gif" alt="loading..."></div><!-- Google Analytics: change UA-XXXXX-X to be your site's ID --><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Vi</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css"/>
+</head>
 
-       ga('create', 'UA-XXXXX-X');
-       ga('send', 'pageview');</script><!--[if lt IE 9]>
-    <script src="bower_components/es5-shim/es5-shim.js"></script>
-    <script src="bower_components/json3/lib/json3.min.js"></script>
-    <![endif]--><script src="scripts/3a695628.vendor.js"></script><script src="scripts/4a21c4ce.scripts.js"></script>
+<body>
+<div class="vi">
+    <div class="sidebar">
+        <div class="header">
+            <h1>Vi</h1>
+            <div class="quote">
+                <p class="quote-text animate-init">不积跬步，无以至千里。不积小流，无以成江海。</p>
+                <p class="quote-author animate-init">《劝学篇》—— <strong>荀子</strong></p>
+            </div>
+        </div>
+        <div class="menu">
+            <a href="https://github.com/iissnan" class="animate-init">GitHub</a>
+            <a href="http://notes.iissnan.com" class="animate-init">Notes</a>
+            <a href="http://douban.com/people/iissnan" class="animate-init">DouBan</a>
+            <a href="http://weibo.com/iissnan" class="animate-init">WeiBo</a>
+        </div>
+        <div class="location">
+            <i class="location-icon"></i>
+            <span class="location-text animate-init">XiaMen - China</span>
+        </div>
+    </div>
+
+    <div class="content">
+        <span class="close">close</span>
+    </div>
+</div>
+<script type="text/javascript" src="assets/vendors/jquery/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        var delay = 1;
+        var DELAY_STEP = 200;
+        var animationOptions = { opacity: 1, top: 0};
+
+        $('h1').animate(animationOptions).promise()
+                .pipe(animateMain)
+                .pipe(animateLocationIcon);
+
+        function animateMain() {
+            var dfd = $.Deferred();
+            var els = $('.animate-init');
+            var size = els.size();
+
+            els.each(function (index, el) {
+                delay++;
+                $(el).delay(index * DELAY_STEP)
+                        .animate(animationOptions);
+                (size - 1 === index) && dfd.resolve();
+            });
+            return dfd.promise();
+        }
+
+        function animateLocationIcon() {
+            $('.location-icon').delay(delay * DELAY_STEP).animate({
+                opacity: 1,
+                top: 0
+            }).promise().done(animationQuote);
+        }
+
+        function animationQuote() {}
+    });
+</script>
+</body>
+</html>
