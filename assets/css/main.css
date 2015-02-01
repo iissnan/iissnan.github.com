@@ -26,9 +26,16 @@ ul, ol {
 }
 
 .vi {
+    position: relative;
     margin: 100px auto 0;
     width: 960px;
-    position: relative;
+}
+
+@media (max-width: 767px) {
+    .vi {
+        margin-top: 50px;
+        width: auto;
+    }
 }
 
 .vi h1 {
@@ -108,9 +115,14 @@ ul, ol {
 }
 
 .sidebar {
-    position: absolute;
-    left: 240px;
-    width: 500px;
+    margin: 0 auto;
+    max-width: 500px;
+}
+
+@media (max-width: 767px) { 
+    .sidebar {
+        padding: 0 40px;
+    }
 }
 
 .location {
