@@ -77,7 +77,8 @@ ul, ol {
 }
 
 .quote cite::before {
-    content: "-" padding : 0 5 px
+    content: "-";
+    padding: 0 5px;
 }
 
 .quote p, .quote div {
@@ -147,6 +148,14 @@ ul, ol {
     line-height: 40px;
 }
 
+.relocating {
+    opacity: 0;
+    color: #ccc;
+    font-size: 13px;
+    text-align: center;
+    transition: all .3s ease;
+}
+
 .content {
     display: none;
     position: relative;
@@ -163,4 +172,24 @@ ul, ol {
     position: relative;
     top: -10px;
     opacity: 0;
+}
+
+.hidden { display: none; }
+
+.bookmarks ul { padding: 0 15px; }
+.bookmarks ul li {
+    position: relative;
+    margin: 10px 0;
+    list-style: none;
+}
+
+.bookmarks ul li:before {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: #c9ced1;
+    border-radius: 50%;
+    left: -13px;
+    top: 12px;
 }

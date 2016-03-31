@@ -33,6 +33,9 @@
             <i class="location-icon"></i>
             <span class="location-text animate-init">XiaMen - China</span>
         </div>
+        <div class="relocating">
+            Navigating to: <span class="relocate-location"></span>...
+        </div>
     </div>
 
     <div class="content">
@@ -72,6 +75,18 @@
         }
 
         function animationQuote() {}
+
+        $(document.body).on('keydown', function (event) {
+            // Press 'b' key
+            if (event.which === 66) {
+                $('.relocate-location').text('Bookmark Page');
+                $('.relocating').css('opacity', 1);
+
+                window.setTimeout(function () {
+                    window.location.href = '/bookmarks.html';
+                }, 1000);
+            }
+        });
     });
 </script>
 </body>
