@@ -175,21 +175,3 @@ ul, ol {
 }
 
 .hidden { display: none; }
-
-.bookmarks ul { padding: 0 15px; }
-.bookmarks ul li {
-    position: relative;
-    margin: 10px 0;
-    list-style: none;
-}
-
-.bookmarks ul li:before {
-    content: "";
-    position: absolute;
-    width: 6px;
-    height: 6px;
-    background: #c9ced1;
-    border-radius: 50%;
-    left: -13px;
-    top: 12px;
-}
