@@ -1,93 +1,124 @@
 <!doctype html>
-<html>
+<html lang="zh" class="no-js dark">
 <head>
-    <meta charset="utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Vi - Home page of iissnan</title>
-    <link rel="stylesheet" type="text/css" href="assets/css/main.css"/>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Vi</title>
+  <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
+  <link rel="stylesheet" type="text/css" href="assets/css/main.css"/>
 </head>
 
 <body>
-<div class="vi">
-    <div class="sidebar">
-        <div class="header">
-            <h1>Vi</h1>
-            <div class="quote">
-                <p class="quote-text animate-init">不积跬步，无以至千里。不积小流，无以成江海。</p>
-                <p class="quote-author animate-init">《劝学篇》—— <strong>荀子</strong></p>
-            </div>
-        </div>
-        <div class="menu">
-            <a href="https://github.com/iissnan" class="animate-init">GitHub</a>
-            <a href="http://notes.iissnan.com" class="animate-init">Notes</a>
-            <a href="http://douban.com/people/iissnan" class="animate-init">DouBan</a>
-            <a href="http://weibo.com/iissnan" class="animate-init">WeiBo</a>
-            <p>
-                <a href="http://dudu.zhihu.com/circle/257517" class="animate-init">
-                    奥义·复制粘贴加调试
-                </a>
-            </p>
-        </div>
-        <div class="location">
-            <i class="location-icon"></i>
-            <span class="location-text animate-init">XiaMen - China</span>
-        </div>
-        <div class="relocating">
-            Navigating to: <span class="relocate-location"></span>...
-        </div>
+  <div class="vi">
+    <h1 class="animate-slide-in-down">Vi</h1>
+    <div class="quote">
+      <span class="quote-line quote-line-start animate-slide-in-left"></span>
+      <span class="quote-icon quote-icon-start animate-slide-in-down">
+        <i class="icon icon-quotes-left"></i>
+      </span>
+      <p class="quote-content animate-slide-in-down">不积跬步，无以至千里。不积小流，无以成江海。</p>
+      <p class="quote-author animate-slide-in-down">《劝学篇》—— <em>荀子</em></p>
+      <span class="quote-icon quote-icon-end animate-slide-in-up">
+        <i class="icon icon-quotes-right"></i>
+      </span>
+      <span class="quote-line quote-line-end animate-slide-in-right"></span>
     </div>
+    <div class="links">
+      <a href="https://github.com/iissnan" class="animate-slide-in-down">GitHub</a>
+      <a href="https://notes.iissnan.com" class="animate-slide-in-down">Notes</a>
+      <a href="https://douban.com/people/iissnan" class="animate-slide-in-down">DouBan</a>
+      <a href="https://weibo.com/iissnan" class="animate-slide-in-down">WeiBo</a>
+    </div>
+    <div class="location">
+      <span class="location-icon animate-slide-in-up">
+        <i class="icon icon-map-pin"></i>
+      </span>
+      <span class="location-text animate-slide-in-down">XiaMen - China</span>
+    </div>
+    <div class="relocating">
+      Navigating to: <span class="relocate-location"></span>...
+    </div>
+  </div>
 
-    <div class="content">
-        <span class="close">close</span>
-    </div>
-</div>
-<script type="text/javascript" src="assets/vendors/jquery/index.js"></script>
-<script>
-    $(document).ready(function () {
-        var delay = 1;
+  <script src="assets/vendors/jquery-3.3.1.min.js"></script>
+  <script>
+    $(function () {
+      var SLIDE_IN_DOWN = { opacity: 1, top: 0 };
+      var SLIDE_IN_UP = { opacity: 1, bottom: 0 };
+      var SLIDE_IN_LEFT = { left: 0 };
+      var SLIDE_IN_RIGHT = { right: 0 };
+
+      registerCheatCode();
+      executeAnimations();
+
+      function executeAnimations() {
+        $.when()
+          .then(animateTitle)
+          .then(animationQuote)
+          .then(animateLinks)
+          .then(animateLocation);
+      }
+
+      function animateTitle() {
+        return animate('h1', SLIDE_IN_DOWN);
+      }
+
+      function animationQuote() {
+        return $.when(
+          animate('.quote-line-start', SLIDE_IN_LEFT),
+          animate('.quote-line-end',SLIDE_IN_RIGHT),
+          animate('.quote-icon-start', SLIDE_IN_DOWN),
+          animate('.quote-icon-end', SLIDE_IN_UP)
+        )
+          .then(function () {
+            return animate('.quote-content', SLIDE_IN_DOWN);
+          })
+          .then(function () {
+            return animate('.quote-author', SLIDE_IN_DOWN);
+          });
+      }
+
+      function animateLinks() {
         var DELAY_STEP = 200;
-        var animationOptions = { opacity: 1, top: 0};
+        var elements = $('.links a');
+        var concurrent = $.makeArray(elements)
+          .map(function (element, index) {
+            return animate(element, SLIDE_IN_DOWN, index * DELAY_STEP);
+          });
 
-        $('h1').animate(animationOptions).promise()
-                .pipe(animateMain)
-                .pipe(animateLocationIcon);
+        return $.when.apply($, concurrent);
+      }
 
-        function animateMain() {
-            var dfd = $.Deferred();
-            var els = $('.animate-init');
-            var size = els.size();
+      function animateLocation() {
+        return $.when(
+          animate('.location-icon', SLIDE_IN_UP),
+          animate('.location-text', SLIDE_IN_DOWN)
+        );
+      }
 
-            els.each(function (index, el) {
-                delay++;
-                $(el).delay(index * DELAY_STEP)
-                        .animate(animationOptions);
-                (size - 1 === index) && dfd.resolve();
-            });
-            return dfd.promise();
-        }
+      function animate(selector, properties, delay, options) {
+        delay = delay || 0;
+        return $(selector).delay(delay)
+          .animate(properties, options)
+          .promise();
+      }
 
-        function animateLocationIcon() {
-            $('.location-icon').delay(delay * DELAY_STEP).animate({
-                opacity: 1,
-                top: 0
-            }).promise().done(animationQuote);
-        }
-
-        function animationQuote() {}
-
+      function registerCheatCode() {
         $(document.body).on('keydown', function (event) {
-            // Press 'b' key
-            if (event.which === 66) {
-                $('.relocate-location').text('Bookmark Page');
-                $('.relocating').css('opacity', 1);
+          var KEY_B = 66;
 
-                window.setTimeout(function () {
-                    window.location.href = '/bookmarks.html';
-                }, 1000);
-            }
+          if (event.which === KEY_B) {
+            $('.relocate-location').text('Bookmark Page');
+            $('.relocating').css('opacity', 1);
+
+            window.setTimeout(function () {
+              window.location.href = '/bookmarks.html';
+            }, 1000);
+          }
         });
+      }
     });
-</script>
+  </script>
 </body>
 </html>
