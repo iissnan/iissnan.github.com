@@ -6,8 +6,9 @@
 html { transition: background-color .3s ease; }
 
 body {
-  font: 16px/1.8 -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif,
-  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font: 16px/1.8 -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+  "Microsoft YaHei", Helvetica, Arial, sans-serif,
+  "Apple Color Emoji", "Segoe UI Emoji";
   text-align: center;
 }
 
@@ -110,6 +111,7 @@ ul, ol { list-style: none; }
   display: block;
   position: relative;
   height: 1px;
+  transition: all .3s ease;
 }
 
 .quote cite::before {
@@ -201,14 +203,16 @@ a { color: #333; }
 
 /* DARK MODE
 /* ================================================= */
-.dark { background: #121621; }
-.dark body { color: #6C7486; }
-.dark ::selection { background: #222; color: #99A3BA; }
-.dark h1 { color: #E4ECFA; }
-.dark .quote { color: #6C7486; }
-.dark .quote-icon { color: #3F4656; }
-.dark .quote-line { background: #242836; }
-.dark a { color: #99A3BA; }
-.dark .links a { border-bottom-color: #6C7486; }
-.dark .links a:hover { color: #E4ECFA; border-bottom-color: #99A3BA; }
-.dark .location { color: #6C7486; }
+@media (prefers-color-scheme: dark) {
+  html { background: #121621; }
+  body { color: #6C7486; }
+  ::selection { background: #222; color: #99A3BA; }
+  h1 { color: #E4ECFA; }
+  .quote { color: #6C7486; }
+  .quote-icon { color: #3F4656; }
+  .quote-line { background: #242836; }
+  a { color: #99A3BA; }
+  .links a { border-bottom-color: #6C7486; }
+  .links a:hover { color: #E4ECFA; border-bottom-color: #99A3BA; }
+  .location { color: #6C7486; }
+}
